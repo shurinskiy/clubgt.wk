@@ -1,0 +1,101 @@
+.about {
+	$self: &;
+	margin-bottom: 150px;
+	
+	@include media('<=sm') {
+		margin-bottom: 60px;
+	}
+
+	&__inner {
+		display: flex;
+		
+		@include media('<=sm') {
+			flex-wrap: wrap;
+		}
+	}
+
+	&__images {
+		box-sizing: border-box;
+		width: 52%;
+		display: flex;
+		padding: 30px 0 0 10px;
+		
+		@include media('<=sm') {
+			width: 100%;
+			margin-bottom: 100px;
+		}
+	}
+	
+	&__image {
+		transform: perspective(250px) rotateY(5deg);
+
+		&:last-child {
+			margin: 150px 0 0 -100px;
+		}
+	}
+	
+	&__side {
+		box-sizing: border-box;
+		width: 48%;
+		padding: 0 20px;
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: center;
+		justify-content: center;
+		
+		@include media('<=sm') {
+			width: 100%;
+		}
+	}
+
+	&__title {
+
+	}
+
+	&__text {
+		font-family: "UL", sans-serif;
+		line-height: 1.2;
+		font-size: 20px;
+		text-align: center;
+		max-width: 550px;
+		margin-bottom: 30px;
+		
+		@include media('<=md') {
+			font-size: 17px;
+			line-height: 1.4;
+		}
+		
+		@include media('<=sm') {
+			font-size: 18px;
+		}
+		
+		@include media('<=xs') {
+			font-size: 17px;
+		}
+		
+		@include media('<=xxs') {
+			font-size: 15px;
+		}
+	}
+	
+	&__join-btn {
+		display: block;
+		box-sizing: border-box;
+		border: 1px solid rgba(0, 0, 0, 0.3);
+		text-align: center;
+		width: 100%;
+		max-width: 210px;
+		padding: 5px;
+		font-family: "UL", sans-serif;
+		font-size: 15px;
+		text-decoration: none;
+		color: inherit;
+		transition: background-color 0.5s ease;
+
+		&:hover {
+			background-color: #FF0900;
+			border-color: #FF0900;
+			color: #fff;
+		}
+	}
+}

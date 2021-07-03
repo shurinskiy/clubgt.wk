@@ -1,0 +1,19 @@
+.title {
+	$self: &;
+	font-family: "UR", sans-serif;
+	line-height: 1.1;
+	font-size: 35px;
+	margin-bottom: 30px;
+
+	@include media('<=lg') {
+		font-size: 30px;
+	}
+
+	@include media('<=sm') {
+		font-size: 25px;
+	}
+
+	@include media('<=xs') {
+		font-size: 20px;
+	}
+}

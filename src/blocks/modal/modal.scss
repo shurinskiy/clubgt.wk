@@ -1,0 +1,50 @@
+@import "../../../node_modules/jquery-modal/jquery.modal";
+
+.modal {
+	$self: &;
+
+	&__hidden {
+		display: none;
+	}
+	
+	/* &_showcase {
+		z-index: 14;
+		width: 100%;
+		max-width: none;
+		min-height: calc(100vh - 30px);
+		border-radius: 2px;
+		padding: 0;
+		background-color: #000;
+
+		.close-modal {
+			top: 50px !important;
+			right: 100px !important;
+			height: 56px !important;
+			width: 56px !important;
+			border: 1px solid #fff !important;
+			border-radius: 50% !important;
+			background: url('./images/ic-close.svg') center / auto no-repeat transparent !important;
+			transition: border-color 0.5s ease !important;
+		
+			@include media('<=lg') {
+				right: 50px !important;
+			}
+			
+			@include media('<=xxs') {
+				top: 20px !important;
+				right: 20px !important;
+				height: 45px !important;
+				width: 45px !important;
+			}
+			
+			&:hover {
+				border-color: #ff0900 !important;
+			}
+		}
+	} */
+}
+
+.blocker { 
+	z-index: 13;
+	padding: 15px;
+}

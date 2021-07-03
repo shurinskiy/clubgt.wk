@@ -1,0 +1,261 @@
+@import "../../node_modules/swiper/swiper.scss";
+
+.hero {
+	$self: &;
+	height: 100vh;
+	position: relative;
+	display: flex;
+	flex-flow: column nowrap;
+	color: #fff;
+	margin: -146px 0 40px;
+
+	&__slider {
+		box-sizing: border-box;
+		overflow: hidden;
+		position: absolute;
+		z-index: 1;
+		width: 100%;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		min-width: 0;
+	}
+
+	&__slide {
+		box-sizing: border-box;
+		padding: 20px;
+		background: url('') center right / cover no-repeat #415559;
+		width: 100%;
+		height: 100%;
+		min-width: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__slide-content {
+		box-sizing: border-box;
+		position: relative;
+		z-index: 10;
+		max-width: 630px;
+		padding: 0 40px;
+		
+		@include media('<=sm') {
+			padding: 0 80px;
+		}
+		
+		@include media('<=xs') {
+			padding: 0 40px;
+		}
+		
+		@include media('<=xxs') {
+			padding: 0 20px;
+		}
+
+		h2 {
+			font-size: 40px;
+			line-height: 1.1;
+			text-align: center;
+			margin-bottom: 10px;
+			
+			@include media('<=lg') {
+				font-size: 35px;
+			}
+			
+			@include media('<=xxs') {
+				font-size: 25px;
+			}
+			
+			@include media('<=xxxs') {
+				font-size: 22px;
+				margin-bottom: 15px;
+			}
+		}
+		
+		p {
+			font-family: "UL", sans-serif;
+			font-size: 20px;
+			line-height: 1.3;
+			text-align: center;
+			margin-bottom: 20px;
+			
+			@include media('<=xxs') {
+				font-size: 16px;
+			}
+			
+			@include media('<=xxxs') {
+				font-size: 15px;
+				line-height: 1.4;
+			}
+		}
+	}
+
+	&__slide-callback {
+		display: block;
+		box-sizing: border-box;
+		border: 1px solid rgba(255, 255, 255, 0.3);
+		text-align: center;
+		width: 100%;
+		max-width: 210px;
+		padding: 5px;
+		margin: 0 auto;
+		font-family: "UL", sans-serif;
+		font-size: 15px;
+		text-decoration: none;
+		color: inherit;
+		transition: background-color 0.5s ease;
+		
+		@include media('<=xxxs') {
+			max-width: 180px;
+		}
+
+		&:hover {
+			border-color: #FF0900;
+			background-color: #FF0900;
+			color: #fff;
+		}
+	}
+
+	&__slider-navi {
+		box-sizing: border-box;
+		position: relative;
+		z-index: 9;
+		flex-grow: 1;
+		border-right: 1px solid rgba(255, 255, 255, 0.5);
+		margin: 210px 8% 70px auto;
+		width: 100%;
+		max-width: 100px;
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: center;
+		counter-reset: dot-ctr;
+		
+		@include media('<=xxxlg') {
+			margin-right: 50px;
+		}
+		
+		@include media('<=md') {
+			margin-right: 0px;
+		}
+		
+		@include media('<=xs') {
+			padding-top: 250px;
+		}
+		
+		@include media('<=xxxs') {
+			max-width: 70px;
+		}
+	}
+
+	&__slider-dot {
+		display: flex;
+		align-items: center;
+		width: 70%;
+		cursor: pointer;
+		margin-left: auto;
+		padding: 2px 0;
+		transition: width 0.3s ease;
+		
+		&::before {
+			counter-increment: dot-ctr;
+			content: "0" counter(dot-ctr);
+			font-family: "UL", sans-serif;
+			font-size: 15px;
+			color: rgba(255, 255, 255, 0.5);
+			margin-right: 3px;
+		}
+		
+		&::after {
+			display: block;
+			content: '';
+			border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+			flex-grow: 1;
+		}
+		
+		&_active, &:hover {
+			width: 100%;
+			
+			&::before {
+				font-size: 20px;
+				color: #fff;
+			}
+
+			&::after {
+				border-color: #fff;
+			}
+		}
+	}
+
+	&__bottom {
+		box-sizing: border-box;
+		position: relative;
+		z-index: 9;
+		width: 100%;
+		max-width: 1700px;
+		margin: 0 auto;
+		padding: 0 20px;
+	}
+
+	&__socials {
+		@include media('<=sm') {
+			margin-bottom: 40px;
+		}
+			
+		@include media('<=xxs') {
+			margin: 0 auto 40px;
+		}
+	}
+
+	&__go-down {
+		text-align: center;
+		margin-bottom: 10px;
+
+		a {
+			box-sizing: border-box;
+			display: inline-block;
+			height: 60px;
+			width: 27px;
+			border: 2px solid rgba(255, 255, 255, 0.5);
+			border-radius: 100px;
+			transition: border-color 0.3s ease;
+			position: relative;
+			
+			&::before {
+				box-sizing: border-box;
+				display: block;
+				content: '';
+				width: 4px;
+				height: 20px;
+				border-radius: 10px;
+				background-color: rgba(255, 255, 255, 0.5);
+				position: absolute;
+				top: 5px;
+				left: 50%;
+				transform: translateX(-50%);
+				transition: background-color 0.3s ease;
+				animation: moveDown 1.2s infinite;
+				animation-timing-function: ease-in;
+				// animation-play-state: paused;
+			}
+			
+			@keyframes moveDown {
+				0% { top: 5px; }
+				100% { top: 30px; }
+			}
+
+
+			&:hover {
+				border-color: #fff;
+
+				&::before {
+					background-color: #fff;
+					// animation-play-state: running;
+				}
+			}
+		}
+
+		@include media('<=sm') {
+			display: none;
+		}
+	}
+}

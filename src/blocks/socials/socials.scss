@@ -1,0 +1,40 @@
+.socials {
+	$self: &;
+	display: flex;
+	width: 100%;
+	max-width: 180px;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	padding: 5px 8px;
+	transition: border-color 0.5s ease;
+	
+	&:hover {
+		border: 1px solid #FF0900;
+	}
+
+	span {
+		font-family: "UL", sans-serif;
+		color: #fff;
+		margin-right: auto;
+	}
+
+	&__item {
+		box-sizing: border-box;
+		display: block;
+		width: 22px;
+		height: 22px;
+		margin-left: 10px;
+
+		&_fb {
+			background: url('./images/ic-fbook.svg') center / auto no-repeat transparent;
+			width: 14px;
+		}
+		
+		&_inst {
+			background: url('./images/ic-inst.svg') center / auto no-repeat transparent;
+		}
+		
+		&_yout {
+			background: url('./images/ic-yout.svg') center / auto no-repeat transparent;
+		}
+	}
+}

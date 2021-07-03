@@ -1,0 +1,175 @@
+.gallery {
+	$self: &;
+	margin-bottom: 80px;
+
+	&__title {
+		text-align: center;
+
+		&.title {
+			margin-bottom: 40px;
+		}
+	}
+
+	&__items {
+		box-sizing: border-box;
+		display: grid;
+		grid-template-columns: repeat(24, 1fr);
+		grid-auto-rows: 310px;
+		grid-gap: 5px;
+		margin-bottom: 20px;
+		
+		@include media('<xlg','>lg') {
+			grid-auto-rows: 260px;
+		}
+		
+		@include media('<=xs') {
+			display: flex;
+			overflow: auto;
+		}
+	}
+
+	&__item {
+		box-sizing: border-box;
+		position: relative;
+		overflow: hidden;
+
+		@include media('<=xs') {
+			min-height: 300px;
+			min-width: 100%;
+		}
+
+		&_image #{$self}__item-overlay {
+			background-image: url('./images/gallery__image-bg.svg');
+		}
+
+		&_video #{$self}__item-overlay {
+			background-image: url('./images/gallery__video-bg.svg');
+		}
+
+		&:hover img {
+			transform: scale(1.1);
+		}
+
+		img {
+			transition: transform 0.5s ease;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		&:nth-child(1) {
+			grid-column: span 10;
+			grid-row: span 2;
+			
+			@include media('<=lg') {
+				grid-column: span 24;
+			}
+		}
+
+		&:nth-child(2) {
+			grid-column: span 7;
+			
+			@include media('<=lg') {
+				grid-column: span 12;
+			}
+		}
+
+		&:nth-child(3) {
+			grid-column: span 7;
+			
+			@include media('<=lg') {
+				grid-column: span 12;
+			}
+		}
+
+		&:nth-child(4) {
+			grid-column: span 7;
+			
+			@include media('<=lg') {
+				grid-column: span 12;
+			}
+		}
+
+		&:nth-child(5) {
+			grid-column: span 7;
+			
+			@include media('<=lg') {
+				grid-column: span 12;
+			}
+		}
+	}
+
+	&__item-overlay {
+		box-sizing: border-box;
+		position: absolute;
+		color: #fff;
+		z-index: 1;
+		bottom: 0;
+		width: 100%;
+		min-height: 110px;
+		background: url('') bottom 20px right 20px / auto no-repeat rgba(0, 0, 0, 0.5);
+		padding: 10px 120px 10px 25px;
+		
+		@include media('<=xs') {
+			padding-right: 85px;
+		}
+	}
+
+	&__item-title {
+		font-size: 20px;
+		margin-bottom: 10px;
+		
+		@include media('<xlg','>lg') {
+			font-size: 16px;
+		}
+		
+		@include media('<sm','>xs') {
+			font-size: 16px;
+		}
+		
+		@include media('<=xxxs') {
+			font-size: 16px;
+		}
+	}
+	
+	&__item-brief {
+		font-family: "UL", sans-serif;
+		line-height: 1.3;
+		
+		@include media('<xlg','>lg') {
+			font-size: 14px;
+		}
+		
+		@include media('<sm','>xs') {
+			font-size: 14px;
+		}
+		
+		@include media('<=xxxs') {
+			font-size: 14px;
+		}
+	}
+
+	&__counter {
+		display: none;
+		max-width: 90px;
+		height: 35px;
+		margin: 0 auto;
+
+		@include media('<=xs') {
+			display: flex;
+		}
+
+		span {
+			box-sizing: border-box;
+			width: 50%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			&:first-child {
+				border-right: 2px solid #777;
+				font-size: 21px;
+			}
+		}
+	}
+}

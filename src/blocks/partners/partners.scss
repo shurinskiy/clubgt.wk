@@ -1,0 +1,48 @@
+.partners {
+	$self: &;
+	margin-bottom: 100px;
+
+	&__title {
+		text-align: center;
+	}
+
+	&__intro {
+		text-align: center;
+		margin: 0 auto 30px;
+		max-width: 700px;
+	}
+
+	&__items {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		align-items: center;
+		grid-gap: 20px;
+		max-width: 1150px;
+		margin: 0 auto 70px;
+		
+		@include media('<=sm') {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	&__item {
+		text-align: center;
+	}
+
+	&__more {
+		display: block;
+		color: inherit;
+		font-family: "UL", sans-serif;
+		font-size: 20px;
+		max-width: 200px;
+		text-align: center;
+		text-decoration: underline;
+		cursor: pointer;
+		margin: 0 auto;
+		transition: color 0.3s ease;
+
+		&:hover {
+			color: #FF0900;
+		}
+	}
+}
