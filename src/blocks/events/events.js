@@ -1,6 +1,6 @@
 (() => {
 
-	let $items = $('.events__items').find('.events__item');
+	let $items = $('.events__items.events__items_homepage').find('.events__item');
 
 	if($items.length > 4) {
 		$('.events__items').after("<span class='events__more'>all events</span>");
